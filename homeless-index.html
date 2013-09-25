@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+    <title>Sean's Outpost</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.css">
+    <link rel="stylesheet" href="./css/homeless.css">
+    <script src="http://code.jquery.com/jquery-1.8.2.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.2.0/jquery.mobile-1.2.0.min.js"></script>
+
+    <head>
+        <title>Sean's Outpost</title>
+    </head>
+
+<body>
+<script type="text/javascript">
+
+    var address = 'n1Um5LArvtbzyX2d6aob61iX52UTNEqYCp';
+
+    $(document).ready(function(){
+        $('img#mainpage').width(window.innerWidth);
+        $('#button').css('bottom',$('#footer').height());
+        $('#img_cat_less').height(window.innerHeight -$('[data-role=header]').height() );
+
+        $('#score').css('margin-bottom',($('#don_button').height()-$('#score').height())/2)
+
+        var margin = (window.innerWidth - $('#button').width())/2;
+            $('#button').css('margin-left',margin);
+            $('#button').css('margin-right',margin);
+            $('#imggh').css('margin-left',margin);
+            $('#imggh').css('margin-right',margin);
+
+        $(window).resize(function(){
+
+            $('#img_cat').height(window.innerHeight -$('[data-role=header]').height() );
+            var margin = (window.innerWidth - $('#button').width())/2;
+            $('#button').css('margin-left',margin);
+            $('#button').css('margin-right',margin);
+            $('#imggh').css('margin-left',margin);
+            $('#imggh').css('margin-right',margin);
+            $('#')
+        });
+
+        $('#done').on('click',function(){
+            var donate = parseFloat($('#score').val());
+            bitcoin.sendCoinsForAddress(address, donate, new function(success, transaction_id){
+
+            });
+        });
+    });
+</script>
+
+<div id="img_cat_less" data-role="page">
+    <div data-role="header">
+        <div class="widmax-less"></div>
+    </div>
+    <div data-role="context">
+
+        <div  class="cat">
+        </div>
+
+    </div>
+           <div id="button">
+                <img class="abs" src="./css/images/homeless-slogan.png">
+                <div id="don_button" class="abs">
+                    <input id="score" type="text" value="1.00" class="transparent-input">
+                    <img src="./css/images/donate.png">
+                </div>
+            </div>
+
+    <div id="footer" data-role="footer" data-theme="c" >
+        <div align="right">
+            <img id="done" src="./css/images/done.png">
+        </div>
+    </div>
+</div>
+</body>
+</html>

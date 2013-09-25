@@ -1,0 +1,119 @@
+[data-role=page]{
+	height: 100% !important;
+	position:relative !important;
+	}
+
+[data-role=footer]{
+	bottom:0;
+	position:fixed !important;
+	top: auto !important;
+	width:100%;
+	}
+
+[data-role=context]{
+	background: black;
+	}
+
+body {
+    overflow-y: hidden;
+}
+#button {
+    position: absolute;
+    bottom: 2%;
+    margin-left:5%;
+    margin-right:5%;
+    width:90%;
+    max-width: 256px;
+    max-height:40%;
+    overflow: hidden;
+    padding-bottom: 5%;
+}
+
+.gh {
+    position: absolute;
+    top: 2%;
+    margin-left:5%;
+    margin-right:5%;
+    width:90%;
+    max-width: 256px;
+    max-height:40%;
+}
+
+#imggh {
+
+}
+
+#img_cat {
+    position: relative;
+    background: url('./images/cat-big.png') center center no-repeat;
+}
+
+#img_cat_less {
+    /*min-width:1332px;
+    min-height:898px;*/
+    position: relative;
+    background: url('./images/homeless-full-big.png') center center no-repeat;
+}
+
+#button input{
+    position: absolute;
+    z-index: 1;
+    width: 30%;
+    left: 50%;
+    hight:20%;
+}
+
+#button img{
+    position:relative;
+    width:100%;
+    z-index: 0;
+}
+#button div{
+    width:100%;
+    z-index: 0;
+}
+
+#header{
+    width: 100%;
+}
+#header img{
+    width:100%;
+    bottom: 0;
+}
+
+
+.abs {
+    position: relative;
+    float:left;
+}
+
+.widmax {
+    width:100%;
+    min-height: 72px;
+    max-height: 72px;
+    height: 72px;
+    background: url('./images/cat-header-big.png') center center no-repeat;
+}
+
+.widmax-less {
+    width:100%;
+    min-height: 72px;
+    max-height: 72px;
+    height: 72px;
+    background: url('./images/homeless-header-full.png') center center no-repeat;
+}
+
+
+.transparent-input{
+    background-color:white;
+    border: 0px solid;
+
+}
+
+#done{
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    width: 90px;
+
+}
