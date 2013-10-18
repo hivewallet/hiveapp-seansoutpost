@@ -16,6 +16,22 @@
 
     var address = '1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd';
 
+
+    var btc_string_to_satoshi = function(x){
+        var tab = [];
+        if (x.indexOf('.') > 0 ){
+            tab = x.split('.');
+        }else if (x.indexOf(',') > 0){
+            tab = x.split(',');
+        }else{
+            tab = [x,'0'];
+        }
+        var count = tab[1].length;
+        tab = [parseInt(tab[0]), parseInt(tab[1])];
+        amount = tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
+        return amount;
+    }
+
     $(document).ready(function(){
         $('img#mainpage').width(window.innerWidth);
         $('#button').css('bottom',$('#footer').height());
@@ -41,9 +57,8 @@
         });
 
         $('#done').on('click',function(){
-            var donate = parseFloat($('#score').val());
-            bitcoin.sendCoinsForAddress(address, donate, new function(success, transaction_id){
-
+            var donate = btc_string_to_satoshi($('#score').val());
+            bitcoin.sendMoney(address, donate, new function(success, transaction_id){
             });
         });
     });
