@@ -1,7 +1,7 @@
 /**
  * Created by marcinra on 10/19/13.
  */
-var address = 'n1Um5LArvtbzyX2d6aob61iX52UTNEqYCp';
+var address = '1M72Sfpbz1BPpXFHz9m3CdqATR44Jvaydd';
 
 function isNumber(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
