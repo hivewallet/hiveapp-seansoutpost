@@ -27,14 +27,12 @@ img#done{
 }
 
 div#border_radius{
-    border: mediumseagreen;
-    border-style: solid;
     background:#EEEEEE;
     background-origin: padding-box;
     background-size: auto;
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
 }
 
 ul#display-inline-block,
@@ -52,11 +50,11 @@ ul#display-inline-block li {
 
 div.container-button{
     display:table;
-	width:40%;
+	width:60%;
     margin-left: auto;
     margin-right: auto;
     min-width: 230px;
-    max-width: 300px;
+    max-width: 360px;
 
 }
 input.small{
@@ -65,6 +63,12 @@ input.small{
     text-align: center;
     font-size: 20px;
 }
+
+input#in_cash{
+    border-style: none;
+    background:#EEEEEE;
+}
+
 div.fixed{
     bottom:60px;
     text-align: center;
