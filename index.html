@@ -9,17 +9,21 @@
     <head>
         <title>Sean's Outpost</title>
     </head>
-<body>
+<body onload="init()">
     <div id="header"></div>
-    <div  class="fixed">
-        <img class="small" src="css/image/slogan.png">
-        <div id="border_radius" class="container-button">
-            <ul id="display-inline-block">
-                <li><h4>Donate:</h4></li>
-                <li><img src="css/image/B.png"/></li>
-                <li><input id="in_cash" class="small" type="text" value="1.00" onchange="validateValue(this);return false;"/></li>
-            </ul>
+    <div class="fixed">
+
+        <div class="container-button">
+            <div class="small">Help the less<br/>fortunate among us</div>
+            <div id="border_radius">
+                <ul id="display-inline-block">
+                    <li><h4>Donate:</h4></li>
+                    <li><img src="css/image/B.png"/></li>
+                    <li><input id="in_cash" class="small" type="text" value="1.00" onchange="validateValue(this);return false;"/></li>
+                </ul>
+            </div>
         </div>
+
     </div>
     <div class="container-footer">
         <div align="right" onclick="send();return false;">

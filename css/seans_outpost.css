@@ -20,6 +20,7 @@ div.container-footer{
 	top: auto !important;
 	width:100%;
 }
+
 img#done{
     width: 90px;
     height: 30px;
@@ -53,10 +54,10 @@ div.container-button{
 	width:60%;
     margin-left: auto;
     margin-right: auto;
-    min-width: 230px;
-    max-width: 360px;
-
+    min-width: 340px;
+    max-width: 380px;
 }
+
 input.small{
     width: 60px;
     height:30px;
@@ -76,10 +77,12 @@ div.fixed{
 	top: auto !important;
     width:100%;
 }
-img.small{
-    width:40%;
-    margin-left: auto;
-    margin-right: auto;
-    min-width: 230px;
-    max-width: 300px;
+
+div.small{
+    font-family: "AllerDisplay";
+    font-size: x-large;
+    text-align: left;
+    line-height:80%;
+    color: #f6f6c9;
+    margin-bottom: 2%;
 }
