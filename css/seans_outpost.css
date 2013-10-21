@@ -10,7 +10,8 @@ div#header{
     min-height: 72px;
     max-height: 72px;
     height: 72px;
-    background: url('image/header-full.png') center center no-repeat;
+    background: url('image/header.png') center center no-repeat;
+    background-color: #32b376;
 }
 
 div.container-footer{
