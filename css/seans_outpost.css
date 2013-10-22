@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'AllerDisplay';
+  src: url('AllerDisplay.ttf');
+}
+
 body {
     background: black url('./image/background.png') no-repeat;
     background-attachment:fixed;
