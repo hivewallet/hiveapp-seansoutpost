@@ -13,18 +13,6 @@ var init = function(){
     });
 }
 
-var btc_string_to_satoshi = function(amount){
-    var tab = [];
-    if (amount.indexOf(separator) > 0 ){
-        tab = amount.split(separator);
-    }else{
-        tab = [amount,'0'];
-    }
-    var count = tab[1].length;
-    tab = [parseInt(tab[0]), parseInt(tab[1])];
-    return tab[0]*bitcoin.BTC_IN_SATOSHI + tab[1]*(bitcoin.BTC_IN_SATOSHI/(Math.pow(10,count)));
-}
-
 function isNumber(n) {
       return !isNaN(parseFloat(n)) && isFinite(n);
     }
@@ -47,7 +35,7 @@ var success = function(success, transaction_id){
 
 var send = function(){
     var amount_val = document.getElementById('in_cash');
-    var amount = btc_string_to_satoshi(amount_val.value);
+    var amount = btc_string_to_satoshi(amount_val.value, separator);
     if(amount!=0){
         bitcoin.sendMoney(address, amount, success);
     }
