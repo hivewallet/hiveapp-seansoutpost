@@ -8,6 +8,11 @@ body {
     background-attachment:fixed;
     background-position:center;
     margin: 0px;
+    font-family: "AllerDisplay";
+}
+
+input {
+    font-family: "AllerDisplay";
 }
 
 div#header{
@@ -40,40 +45,33 @@ div#border_radius{
     -webkit-border-radius: 3px;
     -moz-border-radius: 3px;
     border-radius: 3px;
+    line-height: 30px;
+    padding-bottom: 7px;
 }
 
-ul#display-inline-block,
-ul#display-inline-block li {
-    color: black;
-    margin: 0;
-    padding: 1px;
+div#border_radius input {
+    border-style: none;
+    background:#EEEEEE;
+    color: #969696;
+    width: 65px;
+    height:30px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 24px;
 }
 
-ul#display-inline-block li {
-    display: inline-block;
-    vertical-align: middle;
-    padding-left:2px;
+div#border_radius img {
+    vertical-align: bottom;
+    margin-bottom: -7px;
 }
 
 div.container-button{
     display:table;
-	width:60%;
+	width:75%;
     margin-left: auto;
     margin-right: auto;
     min-width: 340px;
     max-width: 380px;
-}
-
-input.small{
-    width: 60px;
-    height:30px;
-    text-align: center;
-    font-size: 20px;
-}
-
-input#in_cash{
-    border-style: none;
-    background:#EEEEEE;
 }
 
 div.fixed{
@@ -84,8 +82,7 @@ div.fixed{
     width:100%;
 }
 
-div.small{
-    font-family: "AllerDisplay";
+.styledtext {
     font-size: x-large;
     text-align: left;
     line-height:80%;

@@ -3,23 +3,22 @@
     <title>Sean's Outpost</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/seans_outpost.css">
+
+    <script src="js/jquery-2.0.3.min.js" type="text/javascript"></script>
     <script src="js/hive_mock.js" type="text/javascript"></script>
     <script src="js/seans_outpost.js" type="text/javascript"></script>
 
     <head>
         <title>Sean's Outpost</title>
     </head>
-    <body onload="init()">
+    <body>
         <div id="header"></div>
         <div class="fixed">
             <div class="container-button">
-                <div class="small">Help the less<br/>fortunate among us</div>
+                <div class="styledtext">Help the less<br/>fortunate among us</div>
                 <div id="border_radius">
-                    <ul id="display-inline-block">
-                        <li><h4>Donate:</h4></li>
-                        <li><img src="css/image/B.png"/></li>
-                        <li><input id="in_cash" class="small" type="text" value="1.00" onchange="validateValue(this);return false;"/></li>
-                    </ul>
+                    <img src="css/image/B.png" /><input id="in_cash" type="text" value="0.05" />
+                    feeds <input id="persons_fed" type="text" value="" readonly /> people
                 </div>
             </div>
         </div>
