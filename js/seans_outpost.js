@@ -6,7 +6,6 @@ var separator;
 var perPersonCostUSD = 1.25;
 var rateBTCUSD = 0.00;
 var userBTC;
-var ratesURI = 'https://bitpay.com/api/rates';
 
 $(document).ready(function() {
     init();
@@ -17,6 +16,7 @@ function isNumber(n) {
     'use strict';
     n = n.replace(',', '.');
     if (!isNaN(parseFloat(n)) && isFinite(n)) {
+        // FIXME remove side-effecting
         userBTC = n;
         return true;
     }
@@ -26,29 +26,23 @@ function isNumber(n) {
 function updateEstimate() {
     var amountBTC = $('#in_cash').val();
     if (isNumber(amountBTC)) {
-        //console.log('Got decimal number ' + userBTC.toString());
-        //console.log('rateBTCUSD = ' + rateBTCUSD)
         var amountUSD = userBTC * rateBTCUSD;
-        //console.log('amountUSD = ' + amountUSD.toString())
+        console.log(amountUSD);
         var peopleFed = amountUSD / perPersonCostUSD;
-        //console.log('peopleFed = ' + peopleFed.toString())
+        console.log(peopleFed);
         $('#persons_fed').val(parseInt(peopleFed).toString());
     } else {
         $('#persons_fed').val('0');
     }
 }
 
-function setRates() {
-    $.ajax({
-      dataType: "json",
-      url: ratesURI,
-      success: function(data) {
-        $.each( data, function( key, val ) {
-            if (val.code == 'USD') { rateBTCUSD = val.rate; console.log('Set rate to ' + val.rate.toString() + ' ' + val.code); }
-          });
-        updateEstimate();
-      }
-    });
+function setRates(currency, amount) {
+    console.log(currency, amount);
+    if (currency != 'USD')
+        return;
+
+    rateBTCUSD = amount;
+    updateEstimate();
 }
 
 var init = function(){
@@ -57,8 +51,8 @@ var init = function(){
         var amount_val = document.getElementById('in_cash');
         amount_val.value = '0'+ separator + '05';
     });
-    setRates();
-    updateEstimate();
+    bitcoin.addExchangeRateListener(setRates);
+    bitcoin.updateExchangeRate('USD');
 }
 
 var success = function(success, transaction_id){
